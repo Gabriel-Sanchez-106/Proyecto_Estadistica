@@ -161,6 +161,10 @@ T1=20
 T2=50
 T3=100
 
+XH=simulate_Poisson(1,T3)
+print(smooth_goodness_of_fit_test(XH))
+print(pearson_uniform_test(XH))
+
 power_of_test<-function(){
   Ks=0
   Kp=0
@@ -176,6 +180,6 @@ power_of_test<-function(){
   print((1-Ks/3000)*100)
   print((1-Kp/3000)*100)
 }
-power_of_test()
+
 
 

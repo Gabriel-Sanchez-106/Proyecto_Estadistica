@@ -28,8 +28,6 @@ bt<-function(x, y , b){
   
   counter=0 #Inicializamos el contador
   
-  teststatall=rep(0,b) # Numero de permutaciones a realizar
-  
   for(i in 1:b){
     
     xstar<-sample(z,n1,replace=T) #Creamos nuevas permutaciones
@@ -38,7 +36,6 @@ bt<-function(x, y , b){
     vstar<-mean(ystar)-mean(xstar) #Se calcula su valor
     
     if(vstar>=v) {counter=counter+1} #Se añade al contador si es valido
-    teststatall[i]=vstar #Se almacena  
   }
   pvalue=counter/b #Se calcula el pvalor
   print(pvalue)
@@ -82,6 +79,6 @@ C21 <- data$X2021 # Info 2021
 C22 <- data$X2022 # Info 2022
 C22 <- C22[-length(C22)]
 
-wc(C22,C21)
+bt(C22,C21,15000)
 
 
